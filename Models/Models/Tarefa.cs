@@ -6,7 +6,7 @@ namespace Models.Models
     {
 
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -16,10 +16,8 @@ namespace Models.Models
         [StringLength(255)]
         public string Descricao { get; set; }
         
-        
         public DateTime? DataInicioTarefa { get; set; }
 
-        
         public DateTime? DataFinalTarefa { get; set; }
 
         [Required]
