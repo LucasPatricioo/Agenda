@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Models.DTO;
+using Models.DTO.Tarefa;
 using Models.Models;
 
 namespace AgendaAPI.Profiles

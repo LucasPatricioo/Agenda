@@ -1,7 +1,6 @@
 ﻿using AgendaAPI.Interfaces;
 using AutoMapper;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Models.DTO;
+using Models.DTO.Tarefa;
 using Models.Models;
 using System.Data.SqlTypes;
 
@@ -9,11 +8,9 @@ namespace AgendaAPI.Services
 {
     public class TarefaService : ITarefaService
     {
-        private readonly IMapper _mapper;
         private readonly ITarefaContext _tarefaContext;
-        public TarefaService(IMapper mapper, ITarefaContext tarefaContext)
+        public TarefaService(ITarefaContext tarefaContext)
         {
-            _mapper = mapper;
             _tarefaContext = tarefaContext;
         }
 
@@ -29,7 +26,7 @@ namespace AgendaAPI.Services
             if(tarefaRegistrada == null)
                 throw new SqlNullValueException();
 
-            return _mapper.Map<Tarefa>(tarefaRegistrada);
+            return tarefaRegistrada;
         }
 
         public Tarefa BuscarTarefa(BuscarTarefa buscarTarefa)
@@ -38,7 +35,12 @@ namespace AgendaAPI.Services
             if (tarefaRecuperada == null)
                 throw new SqlNullValueException();
 
-            return _mapper.Map<Tarefa>(tarefaRecuperada);
+            return tarefaRecuperada;
+        }
+
+        public void AlterarEstadoTarefa(AlterarTarefa alterarTarefa)
+        {
+            _tarefaContext.AlterarEstadoTarefa(alterarTarefa);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Models.DTO
+namespace Models.DTO.Tarefa
 {
     public class NovaTarefa
     {

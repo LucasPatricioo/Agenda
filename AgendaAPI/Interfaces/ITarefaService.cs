@@ -1,4 +1,4 @@
-﻿using Models.DTO;
+﻿using Models.DTO.Tarefa;
 using Models.Models;
 
 namespace AgendaAPI.Interfaces
@@ -7,5 +7,6 @@ namespace AgendaAPI.Interfaces
     {
         public Tarefa RegistrarNovaTarefa(NovaTarefa novaTarefa);
         public Tarefa BuscarTarefa(BuscarTarefa buscarTarefa);
+        public void AlterarEstadoTarefa(AlterarTarefa alterarTarefa);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AgendaAPI.Interfaces;
-using Models.DTO;
+using Models.DTO.Tarefa;
 using Models.Models;
 using MySql.Data.MySqlClient;
 using System.Data.SqlTypes;
@@ -105,6 +105,42 @@ namespace AgendaAPI.Data.DAO
 
 
             throw new SqlNullValueException();
+        }
+
+        public void AlterarEstadoTarefa(AlterarTarefa alterarTarefa)
+        {
+            try
+            {
+                int rowsAffected = 0;
+                using (MySqlConnection connection = new MySqlConnection(_connectionString))
+                {
+                    connection.Open();
+
+                    string sql = $@"UPDATE tarefa SET 
+                                data_inicio_tarefa = @DATAINICIOTAREFA , data_final_tarefa = @DATAFINALTAREFA , 
+                                ativo = @ATIVO 
+                                WHERE id = @ID";
+
+
+
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@DATAINICIOTAREFA", alterarTarefa.DataInicioTarefa);
+                        cmd.Parameters.AddWithValue("@DATAFINALTAREFA", alterarTarefa.DataFinalTarefa);
+                        cmd.Parameters.AddWithValue("@ATIVO", alterarTarefa.Ativo);
+                        cmd.Parameters.AddWithValue("@ID", alterarTarefa.Id);
+
+
+                        rowsAffected = cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlNullValueException)
+            {
+                throw new SqlNullValueException();
+            }
+
         }
     }
 }

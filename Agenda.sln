@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaAPI", "AgendaAPI\AgendaAPI.csproj", "{621042F0-7C8E-4BEC-8A61-1CE8D9A30204}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgendaAPI", "AgendaAPI\AgendaAPI.csproj", "{621042F0-7C8E-4BEC-8A61-1CE8D9A30204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{1F17A3E0-B904-4BD1-B46D-9583049EA3DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{1F17A3E0-B904-4BD1-B46D-9583049EA3DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeradorChavePrivada", "GeradorChavePrivada\GeradorChavePrivada.csproj", "{52E7571E-2F7A-4FF0-B570-2AC4AA0BF703}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1F17A3E0-B904-4BD1-B46D-9583049EA3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F17A3E0-B904-4BD1-B46D-9583049EA3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F17A3E0-B904-4BD1-B46D-9583049EA3DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E7571E-2F7A-4FF0-B570-2AC4AA0BF703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E7571E-2F7A-4FF0-B570-2AC4AA0BF703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E7571E-2F7A-4FF0-B570-2AC4AA0BF703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E7571E-2F7A-4FF0-B570-2AC4AA0BF703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
