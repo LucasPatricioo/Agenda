@@ -9,32 +9,23 @@ namespace AgendaAPI.Services
 {
     public class LoginService : ILoginService
     {
-        private const int _saltSizeBytes = 16;
-        private const int _hashSizeBytes = 32;
-        private const int _iterations = 10000;
+        private readonly IConfiguration _configuration;
+        private readonly int _hashSizeBytes;
+        private readonly int _iterations;
 
+        public LoginService(IConfiguration configuration)
+        { 
+            _configuration = configuration;
+            _hashSizeBytes = int.Parse(_configuration["LoginParameters:HashSize"]);
+            _iterations = int.Parse(_configuration["LoginParameters:Iterations"]);
+        }
 
         public bool ValidarLogin(LogarUsuario logarUsuario)
         {
             return true;
         }
 
-        private void GerarCriptografiaSenha(string senha)
-        {
-            byte[] salt;
-            new RNGCryptoServiceProvider().GetBytes(salt = new byte[_saltSizeBytes]);
 
-            var pbkdf2 = new Rfc2898DeriveBytes(senha, salt, _iterations);
-
-            byte[] hash = pbkdf2.GetBytes(_hashSizeBytes);
-
-            //Retorno
-            string hashGerado = Convert.ToBase64String(hash);
-            string saltGerado = Convert.ToBase64String(salt);
-
-            //Senha hash + salt
-            string senhaFinal = hashGerado + saltGerado;
-        }
         
         private bool ValidarSenha(string senha, string hash, string salt)
         {
