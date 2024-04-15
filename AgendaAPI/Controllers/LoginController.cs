@@ -22,7 +22,7 @@ namespace AgendaAPI.Controllers
         {
 
 
-            Token tokenGerado = _tokenService.GerarToken(logarUsuario);
+            //Token tokenGerado = _tokenService.GerarToken(logarUsuario);
 
             return Ok();
         }

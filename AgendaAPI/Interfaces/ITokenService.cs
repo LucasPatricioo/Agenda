@@ -5,6 +5,6 @@ namespace AgendaAPI.Interfaces
 {
     public interface ITokenService
     {
-        public Token GerarToken(LogarUsuario logarUsuario);
+        public Token GerarToken(UsuarioLogado usuarioLogado);
     }
 }

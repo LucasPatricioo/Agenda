@@ -19,9 +19,9 @@ namespace AgendaAPI.Controllers
         [HttpPost("/Login")]
         public IActionResult Login([FromBody] LogarUsuario logarUsuario)
         {
-            Token token = _tokenService.GerarToken(logarUsuario);
+            //Token token = _tokenService.GerarToken(logarUsuario);
 
-            return Ok(token);
+            return Ok();
         }
 
     }

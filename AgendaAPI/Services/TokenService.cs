@@ -18,8 +18,8 @@ namespace AgendaAPI.Services
         {
 
             _configuration = configuration;
-            _privateKey = _configuration["AppParameters:PrivateKey"];
-            _timeExpire = int.Parse(_configuration["AppParameters:TimeInMinutesLoginExpire"]);
+            _privateKey = _configuration["LoginParameters:PrivateKey"];
+            _timeExpire = int.Parse(_configuration["LoginParameters:TimeInMinutesLoginExpire"]);
         }
 
         public Token GerarToken(UsuarioLogado usuarioLogado)

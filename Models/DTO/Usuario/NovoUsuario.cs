@@ -23,9 +23,9 @@ namespace Models.DTO.Usuario
         public string Salt { get; set; }
 
         [Required]
-        public DateTime DataCriada { get; set; }
+        public DateTime DataCriada { get; set; } = DateTime.Now;
 
         [Required]
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
     }
 }
